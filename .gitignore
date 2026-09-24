@@ -1,0 +1,5 @@
+node_modules/
+*.apk
+*.jks
+dist/app.js
+android/app/src/main/assets/app.js
