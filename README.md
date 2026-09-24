@@ -15,7 +15,7 @@
 - `ANDROID_KEY_ALIAS`
 - `ANDROID_KEY_PASSWORD`
 
-推送 `v*` 标签会创建 GitHub Release。覆盖安装须保持 `applicationId` 与签名证书不变，并在每次发布前递增 `versionCode`。首次安装的 debug 包不能由不同签名的 release 包覆盖。
+推送 `v*` 标签会触发构建，生成的 APK 可在 Actions 的 `scanner-apk` artifact 下载；发布 GitHub Release 需要手动上传。覆盖安装须保持 `applicationId` 与签名证书不变，并在每次发布前递增 `versionCode`。首次安装的 debug 包不能由不同签名的 release 包覆盖。
 
 条形码采用 Code 39，仅支持英文字母、数字、空格和 `- . $ / + %`。二维码和条形码输入最多 100 个字符，长 Code 39 条形码打印后可能过密，建议用二维码。
 
