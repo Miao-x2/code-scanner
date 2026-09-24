@@ -1,0 +1,8 @@
+plugins { id 'com.android.application' }
+android { namespace 'com.miao.codescanner'; compileSdk 35
+ defaultConfig { applicationId 'com.miao.codescanner'; minSdk 24; targetSdk 35; versionCode 2; versionName '1.0.1' }
+ signingConfigs { release { if (System.getenv('ANDROID_KEYSTORE_PATH')) { storeFile file(System.getenv('ANDROID_KEYSTORE_PATH')); storePassword System.getenv('ANDROID_KEYSTORE_PASSWORD'); keyAlias System.getenv('ANDROID_KEY_ALIAS'); keyPassword System.getenv('ANDROID_KEY_PASSWORD') } } }
+ buildTypes { release { minifyEnabled false; if (System.getenv('ANDROID_KEYSTORE_PATH')) signingConfig signingConfigs.release } }
+}
+
+dependencies { implementation 'androidx.webkit:webkit:1.12.1' }
